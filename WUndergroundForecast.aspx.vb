@@ -6,7 +6,7 @@ Imports Newtonsoft.Json.Linq
 
 Partial Class WUndergroundForecast
     Inherits System.Web.UI.Page
-    ReadOnly WUNDERKEY As String = "45bd656b25491a92"
+    ReadOnly WUNDERKEY As String = "HIDDEN"
     Public currentWeather As JObject
     Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim getVar As Integer = Request.QueryString("zip")
