@@ -30,7 +30,7 @@
                       <!--<asp:Label for="zipCode" runat="server">Zip Code:</asp:Label>-->
                       <asp:TextBox  name = "zipCode" id="zipCode" style = "text-align:center" CssClass="form-control" runat="server" placeholder = "Enter Your Zip Code" Forecolor="Black" />
                       <asp:Button type = "submit" runat ="server" id = "zipBTN" class = "btn btn-primary"  style = "margin-top:1em" Text="Your WeatherUnderground Forecast" />
-                      <asp:Button type = "submit" runat = "server" id = "forecastBTN"  class = "btn btn-primary" style = "margin-top:1em" Text="Get Your NWS Forecast" />
+                      <asp:Button type = "submit" runat = "server" id = "forecastBTN"  class = "btn btn-primary" style = "margin-top:1em" Text="Coming Soon!" />
                     </form>
                 </div>
             
@@ -42,6 +42,7 @@
                 In feugiat nunc vel efficitur mollis. Nunc fringilla volutpat porta. Nam et semper diam. Mauris ut sapien feugiat, dignissim nunc sed, commodo lorem. Nam non blandit tortor. Suspendisse suscipit dapibus consequat. Ut mauris risus, gravida fringilla sem quis, faucibus rutrum dolor. Mauris id aliquam odio. Fusce sit amet ante aliquet, tincidunt velit cursus, rutrum ante. Nam a fermentum risus. Nulla volutpat vitae eros a rutrum. Pellentesque imperdiet sem interdum odio commodo, ut ultricies elit semper. Mauris porttitor enim et lorem lacinia, sit amet eleifend lacus fringilla.</p>
             </div>
         </div>
+        
         <!-- AHaaland; User defn. scripts -->
         <script>
         // Validation of Zip code input
@@ -88,5 +89,6 @@
             });
             
         </script>
+        <!--#include file="Includes/footer.inc"-->
     </body>
 </html>
