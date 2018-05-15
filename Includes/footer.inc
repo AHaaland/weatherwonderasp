@@ -4,6 +4,6 @@
                 <div class="footAlign">
                     Proudly Powered By:
                     <a href="https://www.wunderground.com/weather/api/"><img src = /Images/wunderlogo.png alt = "Weather Underground" style ="height: 30px;"></a>
-                </div
+                </div>
           </div>
 </footer>
