@@ -38,8 +38,9 @@
         <div class="container" id="homeText">
             <h2 class = "text-center">About this project:</h2>
             <div class="col-md-12 col-xs-12">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar convallis dolor, id ultricies lorem pellentesque eu. Morbi sapien ante, consequat vitae sagittis vitae, tincidunt ac lectus. Sed augue magna, pharetra nec lorem id, sagittis feugiat odio. Nunc fermentum, elit vel facilisis efficitur, diam massa faucibus ante, porttitor maximus tellus libero in nulla. Quisque in suscipit quam. Morbi nibh diam, congue sit amet justo vel, hendrerit suscipit elit. Sed semper enim fermentum viverra venenatis. Proin quis dictum est. Etiam ornare leo ac dolor suscipit, nec egestas nisi maximus. Cras dictum luctus lacus et maximus. Aenean pellentesque enim eget elit laoreet, eget sodales sapien tincidunt.
-                In feugiat nunc vel efficitur mollis. Nunc fringilla volutpat porta. Nam et semper diam. Mauris ut sapien feugiat, dignissim nunc sed, commodo lorem. Nam non blandit tortor. Suspendisse suscipit dapibus consequat. Ut mauris risus, gravida fringilla sem quis, faucibus rutrum dolor. Mauris id aliquam odio. Fusce sit amet ante aliquet, tincidunt velit cursus, rutrum ante. Nam a fermentum risus. Nulla volutpat vitae eros a rutrum. Pellentesque imperdiet sem interdum odio commodo, ut ultricies elit semper. Mauris porttitor enim et lorem lacinia, sit amet eleifend lacus fringilla.</p>
+                <p>WeatherWonder was developed for Probability and Statistics I with Eric Brattain at SUNY New Paltz as a project for the course. WeatherWonder was created by Andrew Haaland, Michael McGovern, and Penny Adler-Colvin. Originally, WeatherWonder allowed you to retrieve a forecast from Weather Underground, and we created a weather prediction using random variables.
+                    Andrew Haaland has modified the original project's WeatherUnderground.com API forecast retrieval feature to run on Asp.NET/Visual Basic instead of PHP as originally designed.
+                </p>
             </div>
         </div>
         
