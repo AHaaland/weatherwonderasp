@@ -29,7 +29,7 @@
                     <form  id = "zipForm" name = "zipForm" runat="server" >
                       <!--<asp:Label for="zipCode" runat="server">Zip Code:</asp:Label>-->
                       <asp:TextBox  name = "zipCode" id="zipCode" style = "text-align:center" CssClass="form-control" runat="server" placeholder = "Enter Your Zip Code" Forecolor="Black" />
-                      <asp:Button type = "submit" runat ="server" id = "zipBTN" class = "btn btn-primary"  style = "margin-top:1em" Text="Your WeatherUnderground Forecast" />
+                      <asp:Button type = "submit" runat ="server" id = "zipBTN" class = "btn btn-primary"  style = "margin-top:1em" Text="Get Your Forecast" />
                       <!--<asp:Button type = "submit" runat = "server" id = "forecastBTN"  class = "btn btn-primary" style = "margin-top:1em" Text="Coming Soon!" />-->
                     </form>
                 </div>
