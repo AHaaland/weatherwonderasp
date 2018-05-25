@@ -67,6 +67,9 @@
             </div>
 
         </div>
+        <div id="modalContainer" runat="server">
+
+        </div>
         
         <script type = "text/javascript">
             

@@ -89,9 +89,12 @@ Partial Class WUndergroundForecast
             classMap.Add(3, "panel-warning")
             classMap.Add(2, "panel-warning")
             classMap.Add(1, "panel-info")
+            Dim count As Integer = 0
             alertContainer.InnerHtml = "<div id='stormAlert' class = 'panel " & classMap.Item(worstAlert) & "'> <div class = 'panel-heading text-center'> <b>Hazardous Weather Conditions</b></div><div class = 'panel-body'>"
             For Each alert In alertList
-                alertContainer.InnerHtml = alertContainer.InnerHtml & "<ul style='list-style-type: none; margin:0; padding:0;'> <li>" & CStr(alert("description")) & " Until " & CStr(alert("expires")) & "</li></ul> </div></div>"
+                alertContainer.InnerHtml = alertContainer.InnerHtml & "<ul style='list-style-type: none; margin:0; padding:0;'> <li><a data-toggle = modal href='#" & CStr(count) & "'>" & CStr(alert("description")) & " Until " & CStr(alert("expires")) & "</a></li></ul> </div></div>"
+                modalContainer.InnerHtml = modalContainer.InnerHtml & "<div Class='modal fade' id= '" & CStr(count) & "' role='dialog'> <div class='modal-dialog'> <div class='modal-content'> <div class='modal-header'> <button type='button' class='close' data-dismiss='modal'>&times;</button> <h4 class='modal-title'>" & CStr(alert("description")) & "</h4> </div> <div class='modal-body'>" & CStr(alert("message")) & "</div> <div class='modal-footer'> <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button> </div> </div> </div> </div>"
+                count += 1
             Next
 
 
