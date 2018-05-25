@@ -18,6 +18,9 @@
         
         
         <div class="weather-container container" ID="weatherContain" runat="server">
+            <div id="alertContainer" runat="server">
+
+            </div>
             
             <div id="currentConditions" class = "panel panel-default">
                 <div class = "panel-heading">

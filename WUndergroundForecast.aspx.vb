@@ -14,6 +14,7 @@ Partial Class WUndergroundForecast
         SetLocInfo(weatherObject)
         SetCurrentWeather(weatherObject)
         SetForecast(weatherObject)
+        SetAlerts(weatherObject)
         currentWeather = GetCurrentWeather(WUNDERKEY, getVar)
     End Sub
     Public Function GetJobjectWeather(ByVal wuKey As String, ByVal zip As String) As JObject
@@ -66,9 +67,37 @@ Partial Class WUndergroundForecast
             countEven += 1
         Next
     End Sub
+    Public Sub SetAlerts(ByVal ary As JObject)
+        Dim alertsAry As JArray = ary.SelectToken("alerts")
+        Dim alertList As New List(Of JToken)
+        alertList = alertsAry.ToList
+        Dim sigMapper As New Hashtable()
+        sigMapper.Add("W", 4)
+        sigMapper.Add("A", 3)
+        sigMapper.Add("Y", 2)
+        sigMapper.Add("S", 1)
+        Dim worstAlert As Integer = 0
+        If Not alertList.Count = 0 Then
+            For Each alert In alertList
+                If worstAlert < sigMapper.Item(CStr(alert("significance"))) Then
+                    worstAlert = sigMapper.Item(CStr(alert("significance")))
+                End If
+            Next
+
+            Dim classMap As New Hashtable()
+            classMap.Add(4, "panel-danger")
+            classMap.Add(3, "panel-warning")
+            classMap.Add(2, "panel-warning")
+            classMap.Add(1, "panel-info")
+            alertContainer.InnerHtml = "<div id='stormAlert' class = 'panel " & classMap.Item(worstAlert) & "'> <div class = 'panel-heading text-center'> <b>Hazardous Weather Conditions</b></div><div class = 'panel-body'>"
+            For Each alert In alertList
+                alertContainer.InnerHtml = alertContainer.InnerHtml & "<ul style='list-style-type: none; margin:0; padding:0;'> <li>" & CStr(alert("description")) & " Until " & CStr(alert("expires")) & "</li></ul> </div></div>"
+            Next
 
 
+        End If
 
+    End Sub
 
 
     ' Dim temp As String = CStr(weatherObject.SelectToken("forecast.txt_forecast.forecastday[0].icon"))
