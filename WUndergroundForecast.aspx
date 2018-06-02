@@ -72,7 +72,6 @@
         </div>
         
         <script type = "text/javascript">
-            
         </script>
     <!--#include file="Includes/footer.inc"-->
     </body>

@@ -6,7 +6,7 @@ Imports Newtonsoft.Json.Linq
 
 Partial Class WUndergroundForecast
     Inherits System.Web.UI.Page
-    ReadOnly WUNDERKEY As String = "HIDDEN"
+    ReadOnly WUNDERKEY As String = "45bd656b25491a92"
     Public currentWeather As JObject
     Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim getVar As Integer = Request.QueryString("zip")
@@ -90,14 +90,15 @@ Partial Class WUndergroundForecast
             classMap.Add(2, "panel-warning")
             classMap.Add(1, "panel-info")
             Dim count As Integer = 0
-            alertContainer.InnerHtml = "<div id='stormAlert' class = 'panel " & classMap.Item(worstAlert) & "'> <div class = 'panel-heading text-center'> <b>Hazardous Weather Conditions</b></div><div class = 'panel-body'>"
+            alertContainer.InnerHtml = "<div id='stormAlert' class = 'panel " & classMap.Item(worstAlert) & "'> <div class = 'panel-heading text-center'> <b>Hazardous Weather Conditions</b></div><div class = 'panel-body'><ul style='list-style-type: none; margin:0; padding:0;'>"
             For Each alert In alertList
-                alertContainer.InnerHtml = alertContainer.InnerHtml & "<ul style='list-style-type: none; margin:0; padding:0;'> <li><a data-toggle = modal href='#" & CStr(count) & "'>" & CStr(alert("description")) & " Until " & CStr(alert("expires")) & "</a></li></ul> </div></div>"
-                modalContainer.InnerHtml = modalContainer.InnerHtml & "<div Class='modal fade' id= '" & CStr(count) & "' role='dialog'> <div class='modal-dialog'> <div class='modal-content'> <div class='modal-header'> <button type='button' class='close' data-dismiss='modal'>&times;</button> <h4 class='modal-title'>" & CStr(alert("description")) & "</h4> </div> <div class='modal-body'>" & CStr(alert("message")) & "</div> <div class='modal-footer'> <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button> </div> </div> </div> </div>"
+                alertContainer.InnerHtml = alertContainer.InnerHtml & "<li><a id = '" & CStr(count) & "'data-toggle = modal href='#sel" & CStr(count) & "'>" & CStr(alert("description")) & " Until " & CStr(alert("expires")) & "</a></li>"
+                modalContainer.InnerHtml = modalContainer.InnerHtml & "<div Class='modal fade' id= 'sel" & CStr(count) & "' role='dialog'> <div class='modal-dialog'> <div class='modal-content'> <div class='modal-header'> <button type='button' class='close' data-dismiss='modal'>&times;</button> <h4 class='modal-title'>" & CStr(alert("description")) & "</h4> </div> <div class='modal-body'>" & CStr(alert("message")) & "</div> <div class='modal-footer'> <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button> </div> </div> </div> </div>"
                 count += 1
             Next
+            alertContainer.InnerHtml = alertContainer.InnerHtml & "</ul> </div></div>"
 
-
+   
         End If
 
     End Sub

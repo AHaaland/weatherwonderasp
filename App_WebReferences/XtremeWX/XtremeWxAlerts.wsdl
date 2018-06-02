@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://wwonderasp.andrewhaaland.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://wwonderasp.andrewhaaland.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://wwonderasp.andrewhaaland.com/">
+      <s:element name="GetAlert">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAlertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAlertResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendAlert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sev" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendAlertResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAlertSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlert" />
+  </wsdl:message>
+  <wsdl:message name="GetAlertSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendAlertSoapIn">
+    <wsdl:part name="parameters" element="tns:SendAlert" />
+  </wsdl:message>
+  <wsdl:message name="SendAlertSoapOut">
+    <wsdl:part name="parameters" element="tns:SendAlertResponse" />
+  </wsdl:message>
+  <wsdl:portType name="XtremeWxAlertsSoap">
+    <wsdl:operation name="GetAlert">
+      <wsdl:input message="tns:GetAlertSoapIn" />
+      <wsdl:output message="tns:GetAlertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAlert">
+      <wsdl:input message="tns:SendAlertSoapIn" />
+      <wsdl:output message="tns:SendAlertSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="XtremeWxAlertsSoap" type="tns:XtremeWxAlertsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAlert">
+      <soap:operation soapAction="http://wwonderasp.andrewhaaland.com/GetAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAlert">
+      <soap:operation soapAction="http://wwonderasp.andrewhaaland.com/SendAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="XtremeWxAlertsSoap12" type="tns:XtremeWxAlertsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAlert">
+      <soap12:operation soapAction="http://wwonderasp.andrewhaaland.com/GetAlert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAlert">
+      <soap12:operation soapAction="http://wwonderasp.andrewhaaland.com/SendAlert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="XtremeWxAlerts">
+    <wsdl:port name="XtremeWxAlertsSoap" binding="tns:XtremeWxAlertsSoap">
+      <soap:address location="http://localhost:50780/XtremeWxAlerts.asmx" />
+    </wsdl:port>
+    <wsdl:port name="XtremeWxAlertsSoap12" binding="tns:XtremeWxAlertsSoap12">
+      <soap12:address location="http://localhost:50780/XtremeWxAlerts.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
